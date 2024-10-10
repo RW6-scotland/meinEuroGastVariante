@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public abstract class Export {
 
-    ArrayList<Artikel> artikelListe;
+    private ArrayList<Artikel> artikelListe;
 
     public Export(ArrayList<Artikel> artikel) {
         this.artikelListe = artikel;
