@@ -10,7 +10,7 @@ public class ExportCSV extends Export{
 
         System.out.println("Nummer;Bezeichnung;Einkaufspreis;Ablaufdatum;Kategorienummer");
         for (Artikel a : getArtikelListe()){
-            System.out.println(a.getNummer() + "; " + a.getBezeichnung() + "; " + a.getEinkaufspreis() + "; " + a.getAblaufdatum() + "; " + a.getKategorienummer());
+            System.out.println(a.getNummer() + ";" + a.getBezeichnung() + ";" + a.getEinkaufspreis() + ";" + a.getAblaufdatum() + ";" + a.getKategorienummer());
         }
 
     }
