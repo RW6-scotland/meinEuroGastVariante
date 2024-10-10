@@ -2,14 +2,11 @@ import java.util.ArrayList;
 
 public class ExportJSON extends Export{
 
-    public ExportJSON(ArrayList<Artikel> artikel) {
-        super(artikel);
-    }
 
     @Override
-    public void exporter() {
+    public void exporter(ArrayList<Artikel> artikel) {
         System.out.println("[");
-        for(Artikel a : getArtikelListe()){
+        for(Artikel a : artikel){
             System.out.println("{");
             System.out.println("Nummer: " + a.getNummer());
             System.out.println("Bezeichnung: " + a.getBezeichnung());

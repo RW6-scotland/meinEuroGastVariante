@@ -4,11 +4,11 @@ import java.util.GregorianCalendar;
 
 public class App {
 
+    private static Export export;
     public static void main(String[] args)
     {
         //zu verarbeitende Artikelliste kommt aus untenstehender Hilfsmethode:
         ArrayList<Artikel> al = artikellisteAusDBDummy();
-        Export export;
         //Je nach Kommandozeilenparameter sollen verschiedene Exporte durchgef�hrt werden.
         //In Eclipse k�nnen diese Paramter gesetzt werden �ber (noch ist keiner gesetzt):
         //�ber Run->Run Configurations -> Arguments -> Programm Arguments
@@ -18,25 +18,25 @@ public class App {
             switch(parameter)
             {
                 case "CSV":
-                    export = new ExportCSV(al);
-                    export.exporter();
+                    export = new ExportCSV();
+                    export.exporter(al);
                     //CSV-Export durchf�hren
                     break;
                 case "JSON":
-                    export = new ExportJSON(al);
-                    export.exporter();
+                    export = new ExportJSON();
+                    export.exporter(al);
                     //JSON-Export durchf�hren
                     break;
                 default:
-                    export = new ExportCSV(al);
-                    export.exporter();
+                    export = new ExportCSV();
+                    export.exporter(al);
                     //CSV-Export durchf�hren
                     break;
             }
         } else //kein Parameter, dann CSV-Export (Standard)
         {
-            export = new ExportCSV(al);
-            export.exporter();
+            export = new ExportCSV();
+            export.exporter(al);
             //CSV-Export
         }
     }
